@@ -1,32 +1,40 @@
 package br.gov.ac.sefaz.servico.servico.model;
 
-import java.io.Serializable;
-import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
-public class NfeIdentificacao implements Serializable{
-
+@Table(name = "NFE_IDENTIFICACAO", schema = "NFE")
+public class NfeIdentificacao implements Serializable {
     private static final long serialVersionUID = 1L;
-
     @Id
-    @Column(name = "CHAVE_ACESSO")
+    @Column(
+            name = "CHAVE_ACESSO"
+    )
     private String chaveAcesso;
-
-    @Column(name = "CNPJ_CPF_DESTINATARIO")
+    @Column(
+            name = "CNPJ_CPF_DESTINATARIO"
+    )
     private String cnpjCpfDestinatario;
-
-    @Column(name = "CNPJ_CPF_EMITENTE")
+    @Column(
+            name = "CNPJ_CPF_EMITENTE"
+    )
     private String cnpjCpfEmitente;
-
-    @Column(name = "DATA_EMISSAO")
+    @Column(
+            name = "DATA_EMISSAO"
+    )
     private String dataEmissao;
 
+    public NfeIdentificacao() {
+    }
+
     public String getChaveAcesso() {
-        return chaveAcesso;
+        return this.chaveAcesso;
     }
 
     public void setChaveAcesso(String chaveAcesso) {
@@ -34,7 +42,7 @@ public class NfeIdentificacao implements Serializable{
     }
 
     public String getCnpjCpfDestinatario() {
-        return cnpjCpfDestinatario;
+        return this.cnpjCpfDestinatario;
     }
 
     public void setCnpjCpfDestinatario(String cnpjCpfDestinatario) {
@@ -42,7 +50,7 @@ public class NfeIdentificacao implements Serializable{
     }
 
     public String getCnpjCpfEmitente() {
-        return cnpjCpfEmitente;
+        return this.cnpjCpfEmitente;
     }
 
     public void setCnpjCpfEmitente(String cnpjCpfEmitente) {
@@ -50,39 +58,32 @@ public class NfeIdentificacao implements Serializable{
     }
 
     public String getDataEmissao() {
-        return dataEmissao;
+        return this.dataEmissao;
     }
 
     public void setDataEmissao(String dataEmissao) {
         this.dataEmissao = dataEmissao;
     }
 
-    @Override
     public int hashCode() {
-        return Objects.hash(chaveAcesso, cnpjCpfDestinatario, cnpjCpfEmitente, dataEmissao);
+        return Objects.hash(new Object[]{this.chaveAcesso, this.cnpjCpfDestinatario, this.cnpjCpfEmitente, this.dataEmissao});
     }
 
-    @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        } else if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        } else if (this.getClass() != obj.getClass()) {
             return false;
-        NfeIdentificacao other = (NfeIdentificacao) obj;
-        return Objects.equals(chaveAcesso, other.chaveAcesso)
-                && Objects.equals(cnpjCpfDestinatario, other.cnpjCpfDestinatario)
-                && Objects.equals(cnpjCpfEmitente, other.cnpjCpfEmitente)
-                && Objects.equals(dataEmissao, other.dataEmissao);
+        } else {
+            NfeIdentificacao other = (NfeIdentificacao)obj;
+            return Objects.equals(this.chaveAcesso, other.chaveAcesso) && Objects.equals(this.cnpjCpfDestinatario, other.cnpjCpfDestinatario) && Objects.equals(this.cnpjCpfEmitente, other.cnpjCpfEmitente) && Objects.equals(this.dataEmissao, other.dataEmissao);
+        }
     }
 
-    @Override
     public String toString() {
-        return "NfeIdentificacao [chaveAcesso=" + chaveAcesso + ", cnpjCpfDestinatario=" + cnpjCpfDestinatario
-                + ", cnpjCpfEmitente=" + cnpjCpfEmitente + ", dataEmissao=" + dataEmissao + "]";
+        return "NfeIdentificacao [chaveAcesso=" + this.chaveAcesso + ", cnpjCpfDestinatario=" + this.cnpjCpfDestinatario + ", cnpjCpfEmitente=" + this.cnpjCpfEmitente + ", dataEmissao=" + this.dataEmissao + "]";
     }
-
-
-
 }
+
