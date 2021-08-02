@@ -77,7 +77,7 @@ public class NfeIdentificacao implements Serializable {
         } else if (this.getClass() != obj.getClass()) {
             return false;
         } else {
-            NfeIdentificacao other = (NfeIdentificacao)obj;
+            NfeIdentificacao other = (NfeIdentificacao) obj;
             return Objects.equals(this.chaveAcesso, other.chaveAcesso) && Objects.equals(this.cnpjCpfDestinatario, other.cnpjCpfDestinatario) && Objects.equals(this.cnpjCpfEmitente, other.cnpjCpfEmitente) && Objects.equals(this.dataEmissao, other.dataEmissao);
         }
     }
