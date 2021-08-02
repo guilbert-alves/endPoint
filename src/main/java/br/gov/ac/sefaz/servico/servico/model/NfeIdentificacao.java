@@ -70,6 +70,7 @@ public class NfeIdentificacao implements Serializable {
     }
 
     public boolean equals(Object obj) {
+<<<<<<< HEAD
         if (this == obj) {
             return true;
         } else if (obj == null) {
@@ -80,6 +81,23 @@ public class NfeIdentificacao implements Serializable {
             NfeIdentificacao other = (NfeIdentificacao) obj;
             return Objects.equals(this.chaveAcesso, other.chaveAcesso) && Objects.equals(this.cnpjCpfDestinatario, other.cnpjCpfDestinatario) && Objects.equals(this.cnpjCpfEmitente, other.cnpjCpfEmitente) && Objects.equals(this.dataEmissao, other.dataEmissao);
         }
+=======
+
+        if (this == obj)
+            return true;
+
+        if (obj == null)
+            return false;
+
+        if (getClass() != obj.getClass())
+            return false;
+        
+        NfeIdentificacao other = (NfeIdentificacao) obj;
+        return Objects.equals(chaveAcesso, other.chaveAcesso)
+                && Objects.equals(cnpjCpfDestinatario, other.cnpjCpfDestinatario)
+                && Objects.equals(cnpjCpfEmitente, other.cnpjCpfEmitente)
+                && Objects.equals(dataEmissao, other.dataEmissao);
+>>>>>>> reswerva2
     }
 
     public String toString() {
